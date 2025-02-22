@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="1">Notes for Books</title>
+    <link rel="icon" href="./images/android-icon-96x96.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+      
+            <nav>
+              <a href="/"><button>Home</button></a>
+              <a href="/new"><button>New Book</button></a>
+              <a href="https://isbnsearch.org/"><button>For ISBN</button></a>
+          </header>
+        <div class="book-container fornotes">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image"><img src="https://covers.openlibrary.org/b/isbn/<%=book.book_isbn%>-M.jpg"
+                            alt="">
+                    </div>
+                    <h1>
+                        <%= book.title %>
+                    </h1>
+                    <h3>By <%= book.author %>
+                    </h3>
+                    <h5>ISBN: <%= book.book_isbn %>
+                    </h5>
+                    <h5>Rating: <%= book.rating %>/10</h5>
+                    <h6>Date Read: <%= book.date_read %>
+                    </h6>
+                    <p>
+                        <%= book.description %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="notes-container">
+            <h2>My Notes</h2>
+            <p id="notes">
+                <%= book.notes %>
+
+            </p>
+        </div>
+        <footer class="footer">
+            <img class="line" src="./images/line.svg" alt="Line Divider" />
+            <img class="dragon" src="./images/dragon.png" alt="Dragon Logo" />
+          </footer>
+    </div>
+    <script>
+        function splitIntoParagraphs(text) {
+            return text.split('\n').filter(para => para.trim() !== '');
+        }
+
+        function addBrTagsAfterNParagraphs(paragraphs, min, max) {
+            const result = [];
+            let count = 0;
+            for (let i = 0; i < paragraphs.length; i++) {
+                result.push(paragraphs[i]);
+                count++;
+                if ((count >= min && count <= max) && i !== paragraphs.length - 1) {
+                    result.push('<br>');
+                    count = 0;
+                }
+            }
+            return result.join('\n');
+        }
+
+        const notesElement = document.getElementById('notes');
+        const originalNotes = notesElement.innerHTML;
+        const paragraphs = splitIntoParagraphs(originalNotes);
+        const notesWithBrTags = addBrTagsAfterNParagraphs(paragraphs, 3, 5);
+        notesElement.innerHTML = notesWithBrTags;
+    </script>
+</body>
+
+</html>

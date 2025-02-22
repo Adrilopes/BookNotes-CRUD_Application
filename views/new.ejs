@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New note</title>
+    <link rel="icon" href="./images/android-icon-96x96.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  
+    <header>     
+        <nav>
+          <a href="/"><button>Home</button></a>
+          <a href="https://isbnsearch.org/"><button>For ISBN</button></a>
+        </nav>
+      </header>
+      <div class="form-body">
+
+        <form action="/newbook" method="post" class="new-form">
+            <label for="booktitle">Book Title:</label>
+            <input type="text" name="booktitle" required>
+            <label for="bookauthor">Author:</label>
+            <input type="text" name="bookAuthor" required>
+            <label for="bookIsbn">Book ISBN:</label>
+            <input type="text" name="bookISBN" required>
+            <label for="date">Date Read:</label>
+            <input type="date" id="dateInput" name="dateInput" required>
+            <label for="description">Description:</label>
+            <textarea name="description" id="" cols="30" rows="5" required></textarea>
+            <label for="rating">Rating 0 - 10</label>
+            <input type="number" name="bookRating" min="1" max="10" step="0.1" required>
+            <label for="notes">Your Notes:</label>
+            <textarea name="bookNotes" id="" cols="30" rows="5" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+
+        <footer class="footer">
+            <img class="line" src="./images/line.svg" alt="Line Divider" />
+            <img class="dragon" src="./images/dragon.png" alt="Dragon Logo" />
+          </footer>
+    </div>
+</body>
+
+</html>
