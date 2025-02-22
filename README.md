@@ -106,22 +106,22 @@ The application will be available at: **[http://localhost:3000](http://localhost
 Here are some previews of the project:
 
 ### 🏠 Home Page
+![HOME](https://github.com/user-attachments/assets/7109dd78-8139-46cd-af87-70c1f9bbfede)
 
+### 🏠 Home Page w/ note container 
+![Home w-note](https://github.com/user-attachments/assets/0d6031e0-ff1c-44a7-bc65-2602d2f4706c)
 
 
 ### 🆕 Add a New Note
-
+![new note](https://github.com/user-attachments/assets/c8722fa1-59e2-41b9-a301-da9a1bc74e60)
 
 
 ### ✏️ Update a Note
-
+![Update](https://github.com/user-attachments/assets/956ea340-cc48-4866-b510-65b48e4bc689)
 
 
 ### 📜 My Notes
-
-
-
----
+![My notes](https://github.com/user-attachments/assets/65a1b6c4-27bd-4b1c-b401-2c6d9023f356)---
 
 
 
